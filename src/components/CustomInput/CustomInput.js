@@ -1,8 +1,10 @@
-export const CustomInput = () => {
+import './CustomInput.css';
+
+export const CustomInput = (props) => {
     return (
-        <div>
-            <label>Nome</label>
-            <input  />
+        <div className="custom-input">
+            <label>{props.label}</label>
+            <input placeholder={props.placeholder}  />
         </div>
     );
 }
