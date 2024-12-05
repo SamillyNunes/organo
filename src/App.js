@@ -1,13 +1,11 @@
 import Banner from './components/Banner';
-import CustomInput from './components/CustomInput';
+import Form from './components/Form';
 
 function App() {
   return (
     <div className="App">
-      <Banner/>
-      <CustomInput label="Nome" placeholder="Digite seu nome" />
-      <CustomInput label="Cargo" placeholder="Digite seu cargo" />
-      <CustomInput label="Imagem" placeholder="Digite o endereço da imagem" />
+      <Banner />
+      <Form />
     </div>
   );
 }
