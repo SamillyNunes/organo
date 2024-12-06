@@ -15,14 +15,19 @@ export const Form = ()=>{
         'Inovação e Gestão',
     ];
 
+    const onSave = (event) =>{
+        event.preventDefault();
+        console.log('Form foi submetido!');
+    }
+
     return (
         <section className="custom_form">
-            <form>  
+            <form onSubmit={onSave} >  
                 <h2>Preencha os dados para criar o card do colaborador</h2>              
-                <CustomInput label="Nome" placeholder="Digite seu nome" />
-                <CustomInput label="Cargo" placeholder="Digite seu cargo" />
-                <CustomInput label="Imagem" placeholder="Digite o endereço da imagem" />
-                <CustomDropdown label="Equipes" itens={teams} />
+                <CustomInput label="Nome" placeholder="Digite seu nome" required />
+                <CustomInput label="Cargo" placeholder="Digite seu cargo" required />
+                <CustomInput label="Imagem" placeholder="Digite o endereço da imagem" required />
+                <CustomDropdown label="Equipes" itens={teams} required />
                 <Button>
                     Criar Card
                 </Button>
