@@ -4,7 +4,11 @@ export const CustomDropdown = (props) =>{
     return (
         <div className='dropdown'>
             <label> {props.label} </label>
-            <select required={props.required}>
+            <select 
+                onChange={e => props.onChange(e.target.value)}
+                required={props.required} 
+                value={props.value}
+            >
                 {
                    props.itens.map(item => <option key={item}> {item} </option>) 
                 }
