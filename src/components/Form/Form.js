@@ -4,7 +4,7 @@ import CustomDropdown from '../CustomDropdown';
 import { Button } from '../Button/Button';
 import { useState } from 'react';
 
-export const Form = ()=>{
+export const Form = (props)=>{
 
     const teams = [
         'Programação',
@@ -24,6 +24,12 @@ export const Form = ()=>{
     const onSave = (event) =>{
         event.preventDefault();
         console.log('Form foi submetido! => ', name, job, imageUrl, team);
+        props.onSaveStaff({
+            name, 
+            job,
+            imageUrl,
+            team
+        });
     }
 
     return (
