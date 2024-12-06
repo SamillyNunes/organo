@@ -1,6 +1,7 @@
 import './Form.css';
 import CustomInput from "../CustomInput";
 import CustomDropdown from '../CustomDropdown';
+import { Button } from '../Button/Button';
 
 export const Form = ()=>{
 
@@ -22,6 +23,9 @@ export const Form = ()=>{
                 <CustomInput label="Cargo" placeholder="Digite seu cargo" />
                 <CustomInput label="Imagem" placeholder="Digite o endereço da imagem" />
                 <CustomDropdown label="Equipes" itens={teams} />
+                <Button>
+                    Criar Card
+                </Button>
             </form>
         </section>
     );
