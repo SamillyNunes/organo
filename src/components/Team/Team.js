@@ -1,3 +1,4 @@
+import StaffCard from '../StaffCard';
 import './Team.css';
 
 export const Team = (props) => {
@@ -8,6 +9,8 @@ export const Team = (props) => {
             <h3 style={{
                 borderColor: props.primaryColor
             }} > {props.name} </h3>
+            <StaffCard />
+            <StaffCard />
         </section>
     );
 }
