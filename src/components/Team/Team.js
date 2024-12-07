@@ -9,8 +9,16 @@ export const Team = (props) => {
             <h3 style={{
                 borderColor: props.primaryColor
             }} > {props.name} </h3>
-            <StaffCard />
-            <StaffCard />
+            {
+                props.staff.map(s => 
+                    <StaffCard 
+                        name={s.name} 
+                        job={s.job} 
+                        image={s.imageUrl}
+                        
+
+                />)
+            }
         </section>
     );
 }

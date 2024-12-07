@@ -45,10 +45,10 @@ function App() {
 
   const [staff, setStaff] = useState([]);
 
-  const saveStaff = (staff) => {
-    console.log(staff);
+  const saveStaff = (newStaff) => {
+    console.log(newStaff);
     /// Abaixo esta espalhando a lista com os colaboradores que ja tinha e adiciona o novo||||||||
-    setStaff([...staff, staff]);
+    setStaff([...staff, newStaff]);
   }
 
   return (
@@ -56,13 +56,14 @@ function App() {
       <Banner />
       <Form 
         teams={teams.map(t=> t.name)} 
-        onSaveStaff={staff => saveStaff(staff)} 
+        onSaveStaff={saveStaff} 
       />
       {
         teams.map(team => 
           <Team 
             key={team.name} 
             name={team.name} 
+            staff={staff}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
           />
