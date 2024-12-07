@@ -63,7 +63,7 @@ function App() {
           <Team 
             key={team.name} 
             name={team.name} 
-            staff={staff}
+            staff={staff.filter(s=> s.team==team.name)}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
           />
