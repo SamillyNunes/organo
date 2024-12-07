@@ -54,7 +54,10 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Form onSaveStaff={staff => saveStaff(staff)} />
+      <Form 
+        teams={teams.map(t=> t.name)} 
+        onSaveStaff={staff => saveStaff(staff)} 
+      />
       {
         teams.map(team => 
           <Team 

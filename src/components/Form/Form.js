@@ -6,16 +6,6 @@ import { useState } from 'react';
 
 export const Form = (props)=>{
 
-    const teams = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão',
-    ];
-
     const [name, setName] = useState('');
     const [job, setJob] = useState('');
     const [imageUrl, setImageUrl] = useState('');
@@ -60,7 +50,7 @@ export const Form = (props)=>{
                 />
                 <CustomDropdown 
                     label="Equipes" 
-                    itens={teams} 
+                    itens={props.teams} 
                     required 
                     value={team} 
                     onChange={v => setTeam(v)}  
