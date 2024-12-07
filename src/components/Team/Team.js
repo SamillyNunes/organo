@@ -3,7 +3,7 @@ import './Team.css';
 
 export const Team = (props) => {
     return (
-        <section className='team' style={{
+         (props.staff.length>0) && <section className='team' style={{
             backgroundColor: props.secondaryColor
         }}>
             <h3 style={{
@@ -16,8 +16,6 @@ export const Team = (props) => {
                             name={s.name} 
                             job={s.job} 
                             image={s.imageUrl}
-                            
-
                     />)
                 }
             </div>
