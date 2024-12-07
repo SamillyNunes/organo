@@ -20,6 +20,10 @@ export const Form = (props)=>{
             imageUrl,
             team
         });
+        setName('');
+        setJob('');
+        setTeam('');
+        setImageUrl('');
     }
 
     return (
