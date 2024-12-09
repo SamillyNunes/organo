@@ -9,6 +9,7 @@ export const CustomDropdown = (props) =>{
                 required={props.required} 
                 value={props.value}
             >
+                <option></option>
                 {
                    props.itens.map(item => <option key={item}> {item} </option>) 
                 }

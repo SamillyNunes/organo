@@ -13,6 +13,8 @@ export const Team = (props) => {
                 {
                     props.staff.map(s => 
                         <StaffCard 
+                            key={s.name}
+                            backgroundColor={props.primaryColor}
                             name={s.name} 
                             job={s.job} 
                             image={s.imageUrl}
