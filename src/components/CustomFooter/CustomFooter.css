@@ -1,0 +1,30 @@
+.custom-foot{
+    background-color: #6278F7;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+}
+
+.custom-foot .network{
+    margin: 0 0;
+    text-align: center;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.custom-foot .network img{
+    height: 20px;
+}
+
+.custom-foot .logo{
+    height: 35px;
+}
+
+.custom-foot .label{
+    color: #ffffff;
+    font-weight: 400;
+}

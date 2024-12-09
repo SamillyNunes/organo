@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import Form from './components/Form';
 import Team from './components/Team';
+import CustomFooter from './components/CustomFooter';
 
 function App() {
 
@@ -63,12 +64,13 @@ function App() {
           <Team 
             key={team.name} 
             name={team.name} 
-            staff={staff.filter(s=> s.team==team.name)}
+            staff={staff.filter(s=> s.team===team.name)}
             primaryColor={team.primaryColor}
             secondaryColor={team.secondaryColor}
           />
         )
       }
+      <CustomFooter/>
     </div>
   );
 }
