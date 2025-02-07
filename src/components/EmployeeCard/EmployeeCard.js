@@ -1,9 +1,9 @@
 import { IoIosCloseCircle } from "react-icons/io";
-import "./StaffCard.css";
+import "./EmployeeCard.css";
 
-export const StaffCard = ({ employee, backgroundColor, onDelete }) => {
+export const EmployeeCard = ({ employee, backgroundColor, onDelete }) => {
   return (
-    <div className="staff" onClick={()=> onDelete(employee)}>
+    <div className="employee" onClick={()=> onDelete(employee)}>
       <IoIosCloseCircle size={25} className="delete" />
       <div
         className="head"

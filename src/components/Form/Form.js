@@ -14,7 +14,7 @@ export const Form = (props)=>{
     const onSave = (event) =>{
         event.preventDefault();
         console.log('Form foi submetido! => ', name, job, imageUrl, team);
-        props.onSaveStaff({
+        props.onSaveEmployee({
             name, 
             job,
             imageUrl,

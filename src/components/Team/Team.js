@@ -1,7 +1,7 @@
-import StaffCard from "../StaffCard";
+import EmployeeCard from "../EmployeeCard";
 import "./Team.css";
 
-export const Team = ({team, staff, onDeleteStaff}) => {
+export const Team = ({team, staff, onDeleteEmployee}) => {
   return (
     staff.length > 0 && (
       <section
@@ -21,11 +21,11 @@ export const Team = ({team, staff, onDeleteStaff}) => {
         <div className="allStaff">
           {staff.map((s) => {
             return (
-              <StaffCard
+              <EmployeeCard
                 key={s.name}
                 backgroundColor={team.primaryColor}
                 employee={s}
-                onDelete={onDeleteStaff}
+                onDelete={onDeleteEmployee}
               />
             );
           })}

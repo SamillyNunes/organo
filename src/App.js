@@ -46,15 +46,15 @@ function App() {
 
   const [staff, setStaff] = useState([]);
 
-  function deleteStaff(employee){
+  function deleteEmployee(employee){
     console.log('deletando');
     setStaff(staff.filter(s => s.name!==employee.name));
   }
 
-  const saveStaff = (newStaff) => {
-    console.log(newStaff);
+  const saveEmployee = (newEmployee) => {
+    console.log(newEmployee);
     /// Abaixo esta espalhando a lista com os colaboradores que ja tinha e adiciona o novo||||||||
-    setStaff([...staff, newStaff]);
+    setStaff([...staff, newEmployee]);
   }
 
   return (
@@ -62,7 +62,7 @@ function App() {
       <Banner />
       <Form 
         teams={teams.map(t=> t.name)} 
-        onSaveStaff={saveStaff} 
+        onSaveEmployee={saveEmployee} 
       />
       {
         teams.map(team => 
@@ -70,7 +70,7 @@ function App() {
             key={team.name} 
             staff={staff.filter(s=> s.team===team.name)}
             team={team}
-            onDeleteStaff={deleteStaff}
+            onDeleteEmployee={deleteEmployee}
           />
         )
       }
