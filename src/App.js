@@ -46,6 +46,11 @@ function App() {
 
   const [staff, setStaff] = useState([]);
 
+  function deleteStaff(employee){
+    console.log('deletando');
+    setStaff(staff.filter(s => s.name!==employee.name));
+  }
+
   const saveStaff = (newStaff) => {
     console.log(newStaff);
     /// Abaixo esta espalhando a lista com os colaboradores que ja tinha e adiciona o novo||||||||
@@ -63,10 +68,9 @@ function App() {
         teams.map(team => 
           <Team 
             key={team.name} 
-            name={team.name} 
             staff={staff.filter(s=> s.team===team.name)}
-            primaryColor={team.primaryColor}
-            secondaryColor={team.secondaryColor}
+            team={team}
+            onDeleteStaff={deleteStaff}
           />
         )
       }

@@ -1,26 +1,36 @@
-import StaffCard from '../StaffCard';
-import './Team.css';
+import StaffCard from "../StaffCard";
+import "./Team.css";
 
-export const Team = (props) => {
-    return (
-         (props.staff.length>0) && <section className='team' style={{
-            backgroundColor: props.secondaryColor
-        }}>
-            <h3 style={{
-                borderColor: props.primaryColor
-            }} > {props.name} </h3>
-            <div className='allStaff'>
-                {
-                    props.staff.map(s => 
-                        <StaffCard 
-                            key={s.name}
-                            backgroundColor={props.primaryColor}
-                            name={s.name} 
-                            job={s.job} 
-                            image={s.imageUrl}
-                    />)
-                }
-            </div>
-        </section>
-    );
-}
+export const Team = ({team, staff, onDeleteStaff}) => {
+  return (
+    staff.length > 0 && (
+      <section
+        className="team"
+        style={{
+          backgroundColor: team.secondaryColor,
+        }}
+      >
+        <h3
+          style={{
+            borderColor: team.primaryColor,
+          }}
+        >
+          {" "}
+          {team.name}{" "}
+        </h3>
+        <div className="allStaff">
+          {staff.map((s) => {
+            return (
+              <StaffCard
+                key={s.name}
+                backgroundColor={team.primaryColor}
+                employee={s}
+                onDelete={onDeleteStaff}
+              />
+            );
+          })}
+        </div>
+      </section>
+    )
+  );
+};
