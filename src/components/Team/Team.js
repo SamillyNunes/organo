@@ -1,5 +1,6 @@
 import EmployeeCard from "../EmployeeCard";
 import "./Team.css";
+import hexToRgba from "hex-to-rgba";
 
 export const Team = ({ team, staff, onDeleteEmployee, changeTeamColor }) => {
   return (
@@ -7,18 +8,18 @@ export const Team = ({ team, staff, onDeleteEmployee, changeTeamColor }) => {
       <section
         className="team"
         style={{
-          backgroundColor: team.secondaryColor,
+          backgroundColor: hexToRgba(team.color, 0.5),  
         }}
       >
         <input
           type="color"
-          value={team.primaryColor}
+          value={team.color}
           onChange={(e) => changeTeamColor(e.target.value, team.name)}
           className="input-color"
         />
         <h3
           style={{
-            borderColor: team.primaryColor,
+            borderColor: team.color,
           }}
         >
           {" "}
@@ -29,7 +30,7 @@ export const Team = ({ team, staff, onDeleteEmployee, changeTeamColor }) => {
             return (
               <EmployeeCard
                 key={s.name}
-                backgroundColor={team.primaryColor}
+                backgroundColor={team.color}
                 employee={s}
                 onDelete={onDeleteEmployee}
               />
