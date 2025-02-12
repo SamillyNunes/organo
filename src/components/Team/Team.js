@@ -1,7 +1,7 @@
 import EmployeeCard from "../EmployeeCard";
 import "./Team.css";
 
-export const Team = ({team, staff, onDeleteEmployee}) => {
+export const Team = ({ team, staff, onDeleteEmployee, changeTeamColor }) => {
   return (
     staff.length > 0 && (
       <section
@@ -10,7 +10,12 @@ export const Team = ({team, staff, onDeleteEmployee}) => {
           backgroundColor: team.secondaryColor,
         }}
       >
-        <input type="color" value={team.primaryColor} className="input-color" />
+        <input
+          type="color"
+          value={team.primaryColor}
+          onChange={(e) => changeTeamColor(e.target.value, team.name)}
+          className="input-color"
+        />
         <h3
           style={{
             borderColor: team.primaryColor,
