@@ -10,6 +10,7 @@ export const Team = ({team, staff, onDeleteEmployee}) => {
           backgroundColor: team.secondaryColor,
         }}
       >
+        <input type="color" value={team.primaryColor} className="input-color" />
         <h3
           style={{
             borderColor: team.primaryColor,
