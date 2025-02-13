@@ -3,8 +3,8 @@ import "./EmployeeCard.css";
 
 export const EmployeeCard = ({ employee, backgroundColor, onDelete }) => {
   return (
-    <div className="employee" onClick={()=> onDelete(employee)}>
-      <IoIosCloseCircle size={25} className="delete" />
+    <div className="employee">
+      <IoIosCloseCircle size={25} className="delete"  onClick={() => onDelete(employee)} />
       <div
         className="head"
         style={{
