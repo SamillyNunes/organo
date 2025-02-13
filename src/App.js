@@ -97,10 +97,18 @@ function App() {
     setStaff([...staff, newEmployee]);
   };
 
+  const saveNewTeam = (newTeam) => {
+    setTeams([...teams, { ...newTeam, id: uuid() }]);
+  };
+
   return (
     <div className="App">
       <Banner />
-      <Form teams={teams.map((t) => t.name)} onSaveEmployee={saveEmployee} />
+      <Form
+        teams={teams.map((t) => t.name)}
+        onSaveEmployee={saveEmployee}
+        onSaveTeam={saveNewTeam}
+      />
       {teams.map((team) => (
         <Team
           key={team.id}

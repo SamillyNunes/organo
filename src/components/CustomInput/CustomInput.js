@@ -9,6 +9,7 @@ export const CustomInput = (props) => {
                 value={props.value}
                 placeholder={props.placeholder} 
                 required={props.required}  
+                type={props.type}
                 onChange={(e)=>props.onChange(e.target.value)}
             />
         </div>

@@ -4,17 +4,20 @@ import CustomDropdown from '../CustomDropdown';
 import { Button } from '../Button/Button';
 import { useState } from 'react';
 
-export const Form = (props)=>{
+export const Form = ({ teams, onSaveEmployee, onSaveTeam })=>{
 
     const [name, setName] = useState('');
     const [job, setJob] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [team, setTeam] = useState('');
+    
+    const [teamName, setTeamName] = useState('');
+    const [teamColor, setTeamColor] = useState('');
 
     const onSave = (event) =>{
         event.preventDefault();
         console.log('Form foi submetido! => ', name, job, imageUrl, team);
-        props.onSaveEmployee({
+        onSaveEmployee({
             name, 
             job,
             imageUrl,
@@ -54,13 +57,37 @@ export const Form = (props)=>{
                 />
                 <CustomDropdown 
                     label="Equipes" 
-                    itens={props.teams} 
+                    itens={teams} 
                     required 
                     value={team} 
                     onChange={v => setTeam(v)}  
                 />
                 <Button>
                     Criar Card
+                </Button>
+            </form>
+            <form onSubmit={(e)=> {
+                e.preventDefault();
+                onSaveTeam({name: teamName, color: teamColor});
+            }} >  
+                <h2>Preencha os dados para criar um novo time.</h2>              
+                <CustomInput 
+                    label="Nome" 
+                    placeholder="Digite o nome do time" 
+                    required
+                    value={teamName} 
+                    onChange={v => setTeamName(v)}                    
+                />
+                <CustomInput 
+                    label="Cor" 
+                    placeholder="Digite a cor do time" 
+                    required 
+                    value={teamColor} 
+                    type={'color'}
+                    onChange={v => setTeamColor(v)}   
+                />
+                <Button>
+                    Criar um novo Time
                 </Button>
             </form>
         </section>
