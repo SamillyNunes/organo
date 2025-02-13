@@ -94,7 +94,7 @@ function App() {
   const saveEmployee = (newEmployee) => {
     console.log(newEmployee);
     /// Abaixo esta espalhando a lista com os colaboradores que ja tinha e adiciona o novo||||||||
-    setStaff([...staff, newEmployee]);
+    setStaff([...staff, {...newEmployee, id: uuid()}]);
   };
 
   const saveNewTeam = (newTeam) => {
