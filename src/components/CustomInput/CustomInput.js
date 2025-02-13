@@ -1,16 +1,16 @@
 import './CustomInput.css';
 
-export const CustomInput = (props) => {
+export const CustomInput = ({label, placeholder, value, required, onChange, type='text'}) => {
 
     return (
-        <div className="custom-input">
-            <label>{props.label}</label>
+        <div className={`custom-input i-${type}`}>
+            <label>{label}</label>
             <input 
-                value={props.value}
-                placeholder={props.placeholder} 
-                required={props.required}  
-                type={props.type}
-                onChange={(e)=>props.onChange(e.target.value)}
+                value={value}
+                placeholder={placeholder} 
+                required={required}  
+                type={type}
+                onChange={(e)=>onChange(e.target.value)}
             />
         </div>
     );
