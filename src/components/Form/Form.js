@@ -20,7 +20,7 @@ export const Form = ({ teams, onSaveEmployee, onSaveTeam })=>{
         onSaveEmployee({
             name, 
             job,
-            imageUrl,
+            image: imageUrl,
             team
         });
         setName('');
