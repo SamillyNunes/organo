@@ -14,7 +14,7 @@ export const Team = ({ team, staff, onDeleteEmployee, changeTeamColor }) => {
         <input
           type="color"
           value={team.color}
-          onChange={(e) => changeTeamColor(e.target.value, team.name)}
+          onChange={(e) => changeTeamColor(e.target.value, team.id)}
           className="input-color"
         />
         <h3

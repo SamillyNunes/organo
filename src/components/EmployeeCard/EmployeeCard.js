@@ -11,7 +11,7 @@ export const EmployeeCard = ({ employee, backgroundColor, onDelete }) => {
           backgroundColor: backgroundColor,
         }}
       >
-        <img src={employee.imageUrl} alt="Samilly Nunes" />
+        <img src={employee.image} alt="Samilly Nunes" />
       </div>
       <div className="foot">
         <h4>{employee.name}</h4>
