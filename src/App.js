@@ -13,6 +13,7 @@ function App() {
       color: "#57C278",
     },
     {
+      favorite: false,
       id: uuid(),
       name: "Front-End",
       color: "#82CFFA",
@@ -51,6 +52,7 @@ function App() {
       job: "Data Engineer",
       image: "https://github.com/SamillyNunes.png",
       team: teams[2].name,
+      favorite: true,
     },
     {
       id: uuid(),
@@ -58,6 +60,7 @@ function App() {
       job: "Security Engineer",
       image: "https://github.com/Leonardo1952.png",
       team: teams[3].name,
+      favorite: false,
     },
     {
       id: uuid(),
@@ -65,6 +68,7 @@ function App() {
       job: "Dev Front-End",
       image: "https://github.com/Leonardo1952.png",
       team: teams[1].name,
+      favorite: false,
     },
     {
       id: uuid(),
@@ -72,6 +76,7 @@ function App() {
       job: "Front-end developer",
       image: "https://github.com/SamillyNunes.png",
       team: teams[1].name,
+      favorite: false,
     },
   ]);
 
@@ -94,12 +99,19 @@ function App() {
   const saveEmployee = (newEmployee) => {
     console.log(newEmployee);
     /// Abaixo esta espalhando a lista com os colaboradores que ja tinha e adiciona o novo||||||||
-    setStaff([...staff, {...newEmployee, id: uuid()}]);
+    setStaff([...staff, { ...newEmployee, id: uuid() }]);
   };
 
   const saveNewTeam = (newTeam) => {
     setTeams([...teams, { ...newTeam, id: uuid() }]);
   };
+
+  const onEmployeeFavorited = (employeeId) => {
+    setStaff(staff.map(employee => {
+      if(employee.id === employeeId) employee.favorite = !employee.favorite;
+      return employee;
+    }));
+  }
 
   return (
     <div className="App">
@@ -116,6 +128,7 @@ function App() {
           team={team}
           changeTeamColor={changeTeamColor}
           onDeleteEmployee={deleteEmployee}
+          onEmployeeFavorited={onEmployeeFavorited}
         />
       ))}
       <CustomFooter />

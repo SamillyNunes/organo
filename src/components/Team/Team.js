@@ -2,7 +2,7 @@ import EmployeeCard from "../EmployeeCard";
 import "./Team.css";
 import hexToRgba from "hex-to-rgba";
 
-export const Team = ({ team, staff, onDeleteEmployee, changeTeamColor }) => {
+export const Team = ({ team, staff, onDeleteEmployee, changeTeamColor, onEmployeeFavorited }) => {
   return (
     staff.length > 0 && (
       <section
@@ -33,6 +33,7 @@ export const Team = ({ team, staff, onDeleteEmployee, changeTeamColor }) => {
                 backgroundColor={team.color}
                 employee={s}
                 onDelete={onDeleteEmployee}
+                onFavorited={onEmployeeFavorited}
               />
             );
           })}
