@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Banner from "./components/Banner";
 import Form from "./components/Form";
 import Team from "./components/Team";
+import Banner from './components/Banner';
 import CustomFooter from "./components/CustomFooter";
 import { v4 as uuid } from "uuid";
 
@@ -115,7 +115,7 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner imageUrl="/images/banner.png" alt="Banner principal da página do Organo" />
       <Form
         teams={teams.map((t) => t.name)}
         onSaveEmployee={saveEmployee}
