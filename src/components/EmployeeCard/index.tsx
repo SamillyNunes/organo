@@ -2,15 +2,23 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 
 import "./EmployeeCard.css";
+import { IColaborator } from "../../shared/interfaces/IColaborator";
 
-export const EmployeeCard = ({
+interface EmployeeCardProps {
+  employee: IColaborator
+  backgroundColor: string
+  onDelete: (employee: IColaborator) => void
+  onFavorited: (employeeId: string) => void
+}
+
+const EmployeeCard = ({
   employee,
   backgroundColor,
   onDelete,
   onFavorited,
-}) => {
+}: EmployeeCardProps) => {
 
-  function favorite(){
+  function favorite() {
     onFavorited(employee.id);
   }
 
@@ -21,14 +29,14 @@ export const EmployeeCard = ({
 
   return (
     <div className="employee">
-      <IoIosCloseCircle size={25} className="delete"  onClick={() => onDelete(employee)} />
+      <IoIosCloseCircle size={25} className="delete" onClick={() => onDelete(employee)} />
       <div
         className="head"
         style={{
           backgroundColor: backgroundColor,
         }}
       >
-        <img src={employee.image} alt="Samilly Nunes" />
+        <img src={employee.imageUrl} alt="Samilly Nunes" />
       </div>
       <div className="foot">
         <h4>{employee.name}</h4>
@@ -44,3 +52,5 @@ export const EmployeeCard = ({
     </div>
   );
 };
+
+export default EmployeeCard;
