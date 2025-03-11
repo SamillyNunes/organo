@@ -57,7 +57,7 @@ export const Form = ({ teams, onSaveEmployee, onSaveTeam })=>{
                 />
                 <CustomDropdown 
                     label="Equipes" 
-                    itens={teams} 
+                    teamNames={teams} 
                     required 
                     value={team} 
                     onChange={v => setTeam(v)}  
