@@ -1,7 +1,7 @@
 import './Form.css';
 import CustomInput from "../CustomInput";
 import CustomDropdown from '../CustomDropdown';
-import { Button } from '../Button/Button';
+import Button from '../Button';
 import { useState } from 'react';
 
 export const Form = ({ teams, onSaveEmployee, onSaveTeam })=>{
