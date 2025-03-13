@@ -23,7 +23,7 @@ const Team = ({ team, staff, onDeleteEmployee, changeTeamColor, onEmployeeFavori
         <input
           type="color"
           value={team.color}
-          onChange={(e) => changeTeamColor(e.target.value, team.id)}
+          onChange={(e) => changeTeamColor(e.target.value, team.id!)}
           className="input-color"
         />
         <h3

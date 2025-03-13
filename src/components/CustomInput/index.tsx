@@ -5,11 +5,11 @@ interface CustomInputProps {
     placeholder: string
     value: string
     required?: boolean
-    type: string
+    type?: string
     onChange: (value: string) => void
 }
 
-const CustomInput = ({ label, placeholder, value, required, onChange, type = 'text' }: CustomInputProps) => {
+const CustomInput = ({ label, placeholder, value, onChange, type = 'text', required = false, }: CustomInputProps) => {
 
     return (
         <div className={`custom-input i-${type}`}>

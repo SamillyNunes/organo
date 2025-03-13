@@ -19,7 +19,7 @@ const EmployeeCard = ({
 }: EmployeeCardProps) => {
 
   function favorite() {
-    onFavorited(employee.id);
+    onFavorited(employee.id!);
   }
 
   const favoriteProps = {

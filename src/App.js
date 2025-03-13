@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Form from "./components/Form";
 import Team from "./components/Team";
-import Banner from './components/Banner';
+import Banner from "./components/Banner";
 import CustomFooter from "./components/CustomFooter";
 import { v4 as uuid } from "uuid";
 
@@ -13,7 +13,6 @@ function App() {
       color: "#57C278",
     },
     {
-      favorite: false,
       id: uuid(),
       name: "Front-End",
       color: "#82CFFA",
@@ -107,17 +106,22 @@ function App() {
   };
 
   const onEmployeeFavorited = (employeeId) => {
-    setStaff(staff.map(employee => {
-      if(employee.id === employeeId) employee.favorite = !employee.favorite;
-      return employee;
-    }));
-  }
+    setStaff(
+      staff.map((employee) => {
+        if (employee.id === employeeId) employee.favorite = !employee.favorite;
+        return employee;
+      })
+    );
+  };
 
   return (
     <div className="App">
-      <Banner imageUrl="/images/banner.png" alt="Banner principal da página do Organo" />
+      <Banner
+        imageUrl="/images/banner.png"
+        alt="Banner principal da página do Organo"
+      />
       <Form
-        teams={teams.map((t) => t.name)}
+        teamsNames={teams.map((t) => t.name)}
         onSaveEmployee={saveEmployee}
         onSaveTeam={saveNewTeam}
       />

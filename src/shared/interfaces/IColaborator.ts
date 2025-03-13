@@ -1,8 +1,8 @@
 export interface IColaborator{
-    id: string
+    id?: string
     name: string
     job: string
     imageUrl: string
-    teamName: string
-    favorite: boolean
+    team: string
+    favorite?: boolean
 }
