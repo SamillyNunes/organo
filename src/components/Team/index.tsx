@@ -13,7 +13,7 @@ interface TeamProps {
 
 const Team = ({ team, staff, onDeleteEmployee, changeTeamColor, onEmployeeFavorited }: TeamProps) => {
   return (
-    staff.length > 0 && (
+    staff.length > 0 ? (
       <section
         className="team"
         style={{
@@ -46,7 +46,7 @@ const Team = ({ team, staff, onDeleteEmployee, changeTeamColor, onEmployeeFavori
           )}
         </div>
       </section>
-    )
+    ) : null
   );
 };
 
