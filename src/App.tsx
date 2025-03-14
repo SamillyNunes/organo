@@ -4,9 +4,10 @@ import Team from "./components/Team";
 import Banner from "./components/Banner";
 import CustomFooter from "./components/CustomFooter";
 import { v4 as uuid } from "uuid";
+import { IColaborator } from "./shared/interfaces/IColaborator";
 
 function App() {
-  const [teams, setTeams] = useState([
+  const [teams, setTeams] = useState<ITeam[]>([
     {
       id: uuid(),
       name: "Programação",
@@ -44,7 +45,7 @@ function App() {
     },
   ]);
 
-  const [staff, setStaff] = useState([
+  const [staff, setStaff] = useState<IColaborator[]>([
     {
       id: uuid(),
       name: "Samilly Nunes",
@@ -79,7 +80,7 @@ function App() {
     },
   ]);
 
-  function changeTeamColor(color, teamId) {
+  function changeTeamColor(color: string, teamId: string) {
     setTeams(
       teams.map((t) => {
         if (t.id === teamId) {
@@ -90,22 +91,22 @@ function App() {
     );
   }
 
-  function deleteEmployee(employee) {
+  function deleteEmployee(employee: IColaborator) {
     console.log("deletando");
     setStaff(staff.filter((s) => s.id !== employee.id));
   }
 
-  const saveEmployee = (newEmployee) => {
+  const saveEmployee = (newEmployee: IColaborator) => {
     console.log(newEmployee);
     /// Abaixo esta espalhando a lista com os colaboradores que ja tinha e adiciona o novo||||||||
     setStaff([...staff, { ...newEmployee, id: uuid() }]);
   };
 
-  const saveNewTeam = (newTeam) => {
+  const saveNewTeam = (newTeam: ITeam) => {
     setTeams([...teams, { ...newTeam, id: uuid() }]);
   };
 
-  const onEmployeeFavorited = (employeeId) => {
+  const onEmployeeFavorited = (employeeId: string) => {
     setStaff(
       staff.map((employee) => {
         if (employee.id === employeeId) employee.favorite = !employee.favorite;

@@ -6,8 +6,8 @@ import EmployeeCard from "../EmployeeCard";
 interface TeamProps {
   team: ITeam
   staff: IColaborator[]
-  onEmployeeFavorited: () => void
-  onDeleteEmployee: () => void
+  onEmployeeFavorited: (employeeId: string) => void
+  onDeleteEmployee: (employee: IColaborator) => void
   changeTeamColor: (color: string, teamId: string) => void
 }
 
