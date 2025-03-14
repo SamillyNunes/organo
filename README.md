@@ -2,7 +2,7 @@
 
 Website no qual é possível criar times da empresa Organo e apresentá-los de maneira organizada. O projeto foi criado a fim de estudar e praticar conceitos de desenvolvimento com React.js, acompanhando [este curso](https://cursos.alura.com.br/course/react-desenvolvendo-javascript) na Alura. 
 
-Você pode visualizar o [deploy deste projeto aqui](https://organo-eta-orpin.vercel.app/).
+Você pode visualizar o [deploy deste projeto aqui](https://organo-samydev.vercel.app/).
 
 ## Screenshots
 
