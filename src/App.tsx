@@ -53,6 +53,7 @@ function App() {
       imageUrl: "https://github.com/SamillyNunes.png",
       team: teams[2].name,
       favorite: true,
+      startDate: '01/04/2022'
     },
     {
       id: uuid(),
@@ -61,6 +62,7 @@ function App() {
       imageUrl: "https://github.com/Leonardo1952.png",
       team: teams[3].name,
       favorite: false,
+      startDate: '06/21/2021'
     },
     {
       id: uuid(),
@@ -69,6 +71,7 @@ function App() {
       imageUrl: "https://github.com/Leonardo1952.png",
       team: teams[1].name,
       favorite: false,
+      startDate: '07/20/2021'
     },
     {
       id: uuid(),
@@ -77,6 +80,7 @@ function App() {
       imageUrl: "https://github.com/SamillyNunes.png",
       team: teams[1].name,
       favorite: false,
+      startDate: '09/04/2024'
     },
   ]);
 

@@ -41,6 +41,7 @@ const EmployeeCard = ({
       <div className="foot">
         <h4>{employee.name}</h4>
         <h5> {employee.job} </h5>
+        <h5>{new Date(employee.startDate).toLocaleDateString()}</h5>
         <div className="favorite">
           {employee.favorite ? (
             <MdFavorite {...favoriteProps} color="#ff0000" />

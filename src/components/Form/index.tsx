@@ -17,6 +17,7 @@ const Form = ({ teamsNames, onSaveEmployee, onSaveTeam }: FormProps) => {
     const [job, setJob] = useState('');
     const [imageUrl, setImageUrl] = useState('');
     const [team, setTeam] = useState('');
+    const [date, setDate] = useState('');
 
     const [teamName, setTeamName] = useState('');
     const [teamColor, setTeamColor] = useState('');
@@ -28,11 +29,13 @@ const Form = ({ teamsNames, onSaveEmployee, onSaveTeam }: FormProps) => {
             name,
             job,
             imageUrl,
-            team
+            team,
+            startDate: date,
         });
         setName('');
         setJob('');
         setTeam('');
+        setDate('');
         setImageUrl('');
     }
 
@@ -61,6 +64,13 @@ const Form = ({ teamsNames, onSaveEmployee, onSaveTeam }: FormProps) => {
                     value={imageUrl}
                     onChange={v => setImageUrl(v)}
 
+                />
+                <CustomInput
+                    label='Data de entrada no time'
+                    placeholder=''
+                    type='date'
+                    value={date}
+                    onChange={setDate}
                 />
                 <CustomDropdown
                     label="Equipes"
@@ -92,7 +102,7 @@ const Form = ({ teamsNames, onSaveEmployee, onSaveTeam }: FormProps) => {
                     placeholder="Digite a cor do time"
                     required
                     value={teamColor}
-                    type={'color'}
+                    type='color'
                     onChange={v => setTeamColor(v)}
                 />
                 <Button>

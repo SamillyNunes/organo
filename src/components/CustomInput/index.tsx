@@ -5,7 +5,7 @@ interface CustomInputProps {
     placeholder: string
     value: string
     required?: boolean
-    type?: string
+    type?: 'text' | 'password' | 'number' | 'date' | 'email' | 'color'
     onChange: (value: string) => void
 }
 
