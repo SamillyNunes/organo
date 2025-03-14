@@ -1,6 +1,6 @@
 import './CustomFooter.css';
 
-export const CustomFooter = () => {
+const CustomFooter = () => {
     return (
         <div className='custom-foot'>
             <div className='network'>
@@ -13,3 +13,5 @@ export const CustomFooter = () => {
         </div>
     );
 }
+
+export default CustomFooter;
