@@ -76,6 +76,8 @@ const Form = ({ teamsNames, onSaveEmployee, onSaveTeam }: FormProps) => {
             <form onSubmit={(e) => {
                 e.preventDefault();
                 onSaveTeam({ name: teamName, color: teamColor });
+                setTeamName('');
+                setTeamColor('');
             }} >
                 <h2>Preencha os dados para criar um novo time.</h2>
                 <CustomInput
